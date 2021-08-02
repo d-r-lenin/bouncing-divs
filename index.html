@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+            font-size: large;
+      }
+      body{
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            
+      }
+      input{
+        height: 1rem;
+        width: 4rem;
+      }
+      #color{
+        height: 1rem;
+      }
+      #drop-down::after{
+            content: "»";
+            display:inline-block ;
+            margin-left: .5em;
+            font-size: 1.2em;
+      }
+      #drop-down:focus::after{
+       transform: rotate(90deg);
+      }
+      #drop-down{
+            width: 100%;
+      }
+      #drop{
+            display: inline-block;
+            width: 4rem;
+            position: relative;
+      }
+      #options{
+            position: absolute;
+            width: 100%;
+            background-color: rgba(256, 256, 0, .2);
+            display: none;
+      }
+      #options option{
+            cursor:pointer;
+            border: 1px solid rgba(0, 0, 0, .4);
+      }
+      div#root{
+            z-index: 3;
+            margin-left:1em;
+      }
+    </style>
+  </head>
+  <body>
+     <div id="root">
+       <input id="size" type="number" value="10" placeholder="size">
+       <div id="drop">
+            <button id="drop-down" type="menu">px</button>
+            <div id="options">
+                  <option value="pt">pt</option>
+                  <option value="mm">mm</option>
+                  <option value="cm">cm</option>
+                  <option value="in">in</option>
+                  <option value="em">em</option>
+            </div>
+       </div>
+       <input id="color" type="color">
+       <button onclick = "drop()">DROP</button>
+     </div>
+    <script src="BoBall.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
